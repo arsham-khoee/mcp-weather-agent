@@ -1,0 +1,15 @@
+httpx==0.28.1
+httpx-sse==0.4.3
+langchain==1.0.1
+langchain-anthropic==0.3.19
+langchain-core==1.0.0
+langchain-mcp-adapters==0.1.11
+langchain-openai==0.3.27
+langchain-text-splitters==0.3.11
+langgraph==1.0.1
+langgraph-checkpoint==2.1.0
+langgraph-prebuilt==1.0.1
+langgraph-sdk==0.2.9
+mcp==1.18.0
+openai==1.93.0
+python-dotenv==1.1.1
