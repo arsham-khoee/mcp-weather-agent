@@ -86,7 +86,7 @@ def get_current_air_quality(location):
     # Only pollution data
 ```
 
-**Why?** The agent intelligently selects only what it needs, reducing API calls and improving response quality.
+**Why?** The agent intelligently selects only what it needs, enabling guided interactions that lead to clearer semantics and reduced reasoning complexity.
 
 ### 2. **Write Clear, Detailed Descriptions**
 
