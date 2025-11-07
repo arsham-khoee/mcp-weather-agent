@@ -307,7 +307,7 @@ def get_current_air_quality(location):
     # Only pollution data
 ```
 
-**Why?** The agent intelligently selects only what it needs, enabling guided interactions that lead to clearer semantics and reduced reasoning complexity.
+**Why:** The agent intelligently selects only what it needs, enabling guided interactions that lead to clearer semantics and reduced reasoning complexity.
 
 ### 2. **Write Clear, Detailed Descriptions**
 
@@ -337,7 +337,15 @@ def get_current_air_quality(location: str) -> dict:
     """
 ```
 
-**Why:** Enables LLMs to route tool calls intelligently without manual control logic.
+**Poor Description:**
+
+```python
+@mcp.tool()
+def get_current_air_quality(location: str) -> dict:
+    """Get air quality information."""  # No details about what data is returned!
+```
+
+**Why:** The LLM relies on descriptions to make tool selection decisions. Better descriptions = smarter routing.
 
 
 ## Autonomous Tool Selection in Action
