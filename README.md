@@ -143,9 +143,7 @@ async def process_tool_calls(state: AgentState) -> AgentState:
 - Guarantees **clear data flow** through the LangGraph agent
 
 
-## Configuration System
-
-**Centralized Configuration (`config.py`)**
+## Configuration System (`config.py`)
 
 Single source of truth for all application settings:
 
