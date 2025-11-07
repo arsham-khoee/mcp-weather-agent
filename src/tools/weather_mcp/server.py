@@ -1,15 +1,13 @@
-from mcp.server.fastmcp import FastMCP
 import httpx
-import os
-from dotenv import load_dotenv
 from datetime import datetime
 
-load_dotenv()
+from mcp.server.fastmcp import FastMCP
+from src.config import settings
 
 mcp = FastMCP("Weather")
 
-WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
-WEATHER_API_BASE_URL = "http://api.weatherapi.com/v1"
+WEATHER_API_KEY = settings.weather_config.api_key
+WEATHER_API_BASE_URL = settings.weather_config.base_url
 
 
 def _fetch_current_weather(location: str) -> dict:
