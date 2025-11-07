@@ -3,7 +3,6 @@
 A **production‑ready, scalable** example of using **Model Context Protocol (MCP)** with **LangGraph** for intelligent tool orchestration.  
 This project demonstrates **clean architecture principles** and serves as a **blueprint** for building agent‑based systems that integrate tools dynamically through MCP.
 
----
 
 ## Project Structure
 
@@ -39,7 +38,6 @@ mcp-weather-agent/
 └── README.md
 ```
 
----
 
 ## The Tools
 
@@ -50,7 +48,6 @@ mcp-weather-agent/
 | `get_astronomical_data(location)`      | Sun and moon data             | Sunrise, sunset, moonrise, moonset, moon phase           |
 | `get_air_quality(location)`            | Pollution levels              | CO, NO₂, O₃, SO₂, PM2.5, PM10, air quality index         |
 
----
 
 ## Setup
 
@@ -86,7 +83,6 @@ MODEL_API_KEY=your_key_here
 python -m src.main
 ```
 
----
 
 ## How It Works
 
@@ -126,7 +122,6 @@ async def process_tool_calls(state: AgentState) -> AgentState:
 
 **Note:** The system executes tools concurrently by default. However, if tools have dependencies or order matters, you can modify the tool execution logic to run them sequentially when needed.
 
----
 
 ## Scalable Graph Structure
 
@@ -147,7 +142,6 @@ async def process_tool_calls(state: AgentState) -> AgentState:
 - New nodes can be added **without refactoring**
 - Guarantees **clear data flow** through the LangGraph agent
 
----
 
 ## Configuration System
 
@@ -170,7 +164,6 @@ class ModelConfig:
 
 **Why:** Validated at creation time and easy to understand from code, ensuring predictable runtime behavior.
 
----
 
 ## Unified Logging System (`utils/logger.py`)
 
@@ -185,7 +178,6 @@ logger = get_logger(__name__)  # Used everywhere
 - Consistent formatting across the entire application
 - Easily extendable (file handlers, cloud logging, etc.)
 
----
 
 ## Design Patterns Used
 
@@ -201,7 +193,6 @@ def create_agent_node(model_with_tools):
 
 **Why:** Keeps the model context within the node, avoiding globals and repeat setup.
 
----
 
 ### 2. **Configuration as Code**
 
@@ -219,7 +210,6 @@ class ModelConfig:
 
 **Why:** Configuration remains explicit and validated.
 
----
 
 ### 3. **Dependency Injection**
 
@@ -227,7 +217,6 @@ Tools are passed dynamically to `build_graph()` rather than hardcoded.
 
 **Why:** Improves testability, flexibility, and separation of concerns.
 
----
 
 ## Extending the Agent
 
@@ -248,7 +237,6 @@ def create_formatter_node():
     return formatter_node
 ```
 
----
 
 ### Adding a New Edge
 
@@ -266,7 +254,6 @@ def should_format(state: AgentState) -> str:
     return "formatter" if condition else END
 ```
 
----
 
 ### Adding a New MCP Tool
 
@@ -282,7 +269,6 @@ To expand beyond weather, simply add new tool packages:
 
 Each MCP toolset remains isolated and portable.
 
----
 
 ### Adding New Utilities
 
@@ -293,7 +279,6 @@ Add new files in `src/utils/` for shared logic:
 
 These utilities can be imported anywhere to maintain a **consistent infrastructure layer**.
 
----
 
 ## Key Insights: Designing MCP Servers
 
@@ -354,7 +339,6 @@ def get_current_air_quality(location: str) -> dict:
 
 **Why:** Enables LLMs to route tool calls intelligently without manual control logic.
 
----
 
 ## Autonomous Tool Selection in Action
 
@@ -367,7 +351,6 @@ With focused tools and clear descriptions, the agent automatically routes querie
 
 No hardcoded logic required—the agent figures it out from your tool descriptions.
 
----
 
 ## Extend This Blueprint
 
