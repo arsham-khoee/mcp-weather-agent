@@ -465,7 +465,7 @@ def build_graph(tools):  # Tools can come from anywhere
 
 This lifecycle ensures your agent is fault-tolerant — if one server process fails, the client can reconnect or selectively retry without taking down your main agent flow.
 
-### **Comparison MCP vs Direct Tools**
+### **Comparison: MCP vs Direct Tools**
 
 | Aspect                | MCP                                                    | Direct Tools                                     |
 | --------------------- | ------------------------------------------------------ | ------------------------------------------------ |
